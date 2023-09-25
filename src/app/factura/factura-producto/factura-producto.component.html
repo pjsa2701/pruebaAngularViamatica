@@ -1,0 +1,59 @@
+<div class="container text-left mt-5 mb-5">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Código</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Total</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <tr *ngFor="let producto of items, let i = index">
+        <td>{{ producto.codigo }}</td>
+        <td>{{ producto.descripcion }}</td>
+        <td>{{ producto.cantidad }}</td>
+        <td>{{ producto.precio }}</td>
+        <td>{{ producto.total }}</td>
+        <td>
+          <span class="cursor text-danger" (click)="eliminar(i)">
+            <i class="bi bi-file-x-fill"></i>
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="container text-center mb-5">
+  <div class="row">
+    <div class="col-6">
+      <label>Seleccione un producto: </label>
+      <select [(ngModel)]="codigoBuscado">
+        <option selected *ngFor="let item of opciones" [value]="item.codigo">
+          {{ item.descripcion }}
+        </option>
+      </select>
+
+      <br><br>
+
+      <label>Ingrese la cantidad: </label>
+      <input type="number" min="1" [(ngModel)]="cantidadIngresada">
+
+      <br><br>
+
+      <button type="button" class="btn btn-primary btn-sm btn-success" (click)="agregar()">+ AGREGAR PRODUCTO</button>
+    </div>
+
+    <div class="col-6">
+      <h1 class="text-success">TOTAL: {{totalFactura}}</h1>
+
+      <br>
+
+      <h1 class="form-text text-danger" *ngIf="!campoValido">
+        DEBE ESCOGER UNO DE LOS PRODUCTOS Y COLOCAR UNA CANTIDAD MAYOR A 0.
+      </h1>
+    </div>
+  </div>
+</div>
