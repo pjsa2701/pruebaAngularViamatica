@@ -1,6 +1,8 @@
 # PruebaAngularViamatica
 App en Angular para listar los productos que se escogen mediante un ComboBox, la pantalla tiene un diseño de factura, en el cual se puede añadir productos o eliminarlos de la factura e ir calculando su valor.
 
+Esta aplicación está desarrollada utilizando Node.js versión 16.20.2, para garantizar un rendimiento óptimo y la compatibilidad con las dependencias utilizadas en este proyecto.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3.
 
 ## Development server
